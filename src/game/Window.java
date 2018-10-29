@@ -25,9 +25,15 @@ import javax.swing.JPanel;
 public class Window {
     
     Event action = new Event();
+    
+    Terrain terrain = new Terrain();
+    
     FlowLayout flow = new FlowLayout(FlowLayout.CENTER);
+    
     JFrame frame = new JFrame("JumpMan!");
+    
     JButton play = new JButton("PLAY");
+    
     JLabel label = new JLabel("JumpMan!");
     Container c = frame.getContentPane();
     Font font = new Font("Courier", Font.BOLD, 24);
@@ -38,9 +44,13 @@ public class Window {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(flow);
         c.setBackground(new Color(100, 0, 100));
+        
         label.setFont(font);
         label.setForeground(Color.white);
+        
         play.addActionListener(action);
+        
+        frame.setResizable(false);
         frame.add(label);
         frame.add(play);
     }
@@ -52,19 +62,12 @@ public class Window {
 //                JOptionPane.showMessageDialog(frame, "JumpMan!");
                 play.setVisible(false);
                 label.setVisible(false);
-                c.setBackground(new Color(50, 50, 200));
-                terrain();
+                c.setBackground(new Color(51, 153, 255));
+                frame.setLayout(null);
+                frame.add(terrain.Dirt());
+                frame.add(terrain.Grass());
             }
         }
-    }
-    
-    public void terrain(){
-        JPanel rect = new JPanel();
-        int rand = (int) Math.round((Math.random() * ((300 - 1) + 1)) + 1);
-        rect.setBounds(0, frame.getHeight()+rand, 500, rand);
-        rect.setBackground(Color.BLACK);
-        frame.setLayout(null);
-        frame.add(rect);
     }
     
 }
