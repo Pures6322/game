@@ -28,6 +28,8 @@ public class Window {
     
     Terrain terrain = new Terrain();
     
+    Player p = new Player();
+    
     FlowLayout flow = new FlowLayout(FlowLayout.CENTER);
     
     JFrame frame = new JFrame("JumpMan!");
@@ -66,6 +68,7 @@ public class Window {
                 frame.setLayout(null);
                 frame.add(terrain.Dirt());
                 frame.add(terrain.Grass());
+                frame.add(p.JumpMan());
             }
         }
     }

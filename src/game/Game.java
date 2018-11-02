@@ -16,6 +16,8 @@ public class Game {
     
     static Window frame = new Window();
     
+    Movement m = new Movement();
+    
     public static void main(String[] args) {
         frame.createWindow();
     }
